@@ -7,8 +7,9 @@ const path = require('path');
   // 复制翻译的文件
   const readZh = fs.readFileSync('./lang/zh.js');
   fs.writeFileSync('./lang/JPN.js', readZh);
-  // 读取内容
+  // 复制内容到JPN文件
   const readStream = fs.createReadStream('./lang/JPN.js');
+  // 读取内容
   var transData = ''
   readStream.on('data', chunk => {
     transData += chunk;
